@@ -1,0 +1,41 @@
+% arara: lualatex
+% arara: biber
+% arara: lualatex
+%% arara: clean: {extensions: [aux, bbl, bcf, blg, log, run.xml, pdf]}
+
+% classe do documento ---------------------------------------------------------
+\documentclass{ematUFRB}
+
+% comandos importantes 
+%\begin{citalonga} ... \end{citalonga} ----> para citações com mais de 3 linahs
+
+%==============================================================================
+% Início do Documento
+%==============================================================================
+\begin{document}
+%
+  \titulo
+%
+  \autores
+  {
+    \begin{tabular}{rrr}
+        Autor 1 &-- UFRB -- &   autor@email.com \\
+      Coautor 1 &-- UFRB -- & coautor@email.com 
+    \end{tabular}
+  }
+%
+  \onehalfspacing
+%
+%
+  \input{tex/01_secao.tex}
+  \input{tex/02_secao.tex}
+  \input{tex/03_secao.tex}
+%
+% referências
+%
+  \nocite{*}
+  \printbibliography
+%
+%------------------------------------------------------------------------------
+\end{document}
+%==============================================================================
