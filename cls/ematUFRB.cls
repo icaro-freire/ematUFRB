@@ -18,7 +18,7 @@
 %%---------------------------------------------------------------------------%%
 %% Atualizações                                                              %%
 %%   - Para possíveis atualizaçoes, acesse:                                  %%
-%%                    https://github.com/icaro-freire                        %%
+%%                https://github.com/icaro-freire/ematUFRB                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % identificação da classe ematUFRB ============================================
@@ -42,7 +42,7 @@
     bottom     = 2cm, 
     right      = 2cm, 
     headheight = 2.7cm, 
-    headsep    = 0.2cm
+    headsep    = 0.5cm
   }
 
 \RequirePackage{graphicx} %-------> para inserção de figuras (.pdf, .jpg, .png)
@@ -59,8 +59,8 @@
 
 \RequirePackage[style=abnt, justify]{biblatex} %------------> para bibliografia
   \addbibresource{bib/referencias.bib} %---> adiciona o arquivo da bibliografia
-                                         % - deve ter o nome referencias.bib
-                                         % - deve estar no diretório/pasta figs      
+                                       %   - deve ter o nome referencias.bib
+                                       %   - deve estar no diretório/pasta figs      
 
 \RequirePackage{fancyhdr} %---------------> configura os cabeçalhos das páginas
 
@@ -77,20 +77,25 @@
 \newcommand{\logoUFRB}{\includegraphics[width = 4cm]{ufrb}}
 
 %%% criação do título com as especificações do EMAT
-\newcommand{\titulo}{
-  \vspace*{0.1cm}
+\def\tituloDoTrabalho#1{\gdef\@tituloDoTrabalho{#1}}
+\def\instituicaoDoAutor#1{\gdef\@instituicaoDoAutor{#1}}
+\def\emailDoAutor#1{\gdef\@emailDoAutor{#1}}
+\def\autorDoTrabalho#1{\gdef\@autorDoTrabalho{#1}}
+
+\newcommand{\titulo}
+{
+  \vspace*{0.08cm}
   \begin{center}
-    \bfseries
-    \sffamily
-    TÍTULO DE TESTE
+    \sffamily \bfseries \@tituloDoTrabalho
   \end{center}
-  \vspace*{0.1cm}
+  \vspace*{0.08cm}
 }
+
 
 %%% comando (inicial) para os autores
 \newcommand{\autores}[1]{
   \begin{flushright}
-    #1
+    #1    
   \end{flushright}
 }
 

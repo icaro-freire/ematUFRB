@@ -1,31 +1,36 @@
 % arara: lualatex
 % arara: biber
 % arara: lualatex
+% arara: lualatex if found('log', 'undefined references')
 %% arara: clean: {extensions: [aux, bbl, bcf, blg, log, run.xml, pdf]}
 
 % classe do documento ---------------------------------------------------------
-\documentclass{ematUFRB}
-
+\documentclass{cls/ematUFRB}
+%
+  \tituloDoTrabalho{TITULO EM CAIXA ALTA (!?)}
+%
 % comandos importantes 
 %\begin{citalonga} ... \end{citalonga} ----> para citações com mais de 3 linahs
 
 %==============================================================================
 % Início do Documento
-%==============================================================================
+%------------------------------------------------------------------------------
 \begin{document}
 %
   \titulo
 %
-  \autores
-  {
+  \autores{
     \begin{tabular}{rrr}
-        Autor 1 &-- UFRB -- &   autor@email.com \\
-      Coautor 1 &-- UFRB -- & coautor@email.com 
-    \end{tabular}
+      Autor 1    &-- UFRB -- &    autor@email.com \\ % coloque aqui as informações do autor principal
+      Coautor 1  &-- UFRB -- & coautor1@email.com \\ % nomes dos coautores
+      Coautor 2  &-- UFRB -- & coautor2@email.com
+    \end{tabular}    
   }
+%  
 %
-  \onehalfspacing
+  \onehalfspacing %----------------------> para espaçamento de 1.5 entre linhas
 %
+%  carregando as seções do documento
 %
   \input{tex/01_secao.tex}
   \input{tex/02_secao.tex}
@@ -34,7 +39,8 @@
 % referências
 %
   \nocite{*}
-  \printbibliography
+  \printbibliography[title={REFERÊNCIAS}] %--> mostra as referências, além de 
+                                          %    modificar o título para CAIXA ALTA
 %
 %------------------------------------------------------------------------------
 \end{document}
