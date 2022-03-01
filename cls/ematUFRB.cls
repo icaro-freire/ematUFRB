@@ -75,6 +75,7 @@
 
 %%% comando para aramazenar o logo da universidade
 \newcommand{\logoUFRB}{\includegraphics[width = 4cm]{ufrb}}
+\newcommand{\logoEMAT}{\includegraphics[width = 3cm]{logo_v-emat}}
 
 %%% criação do título com as especificações do EMAT
 \def\tituloDoTrabalho#1{\gdef\@tituloDoTrabalho{#1}}
@@ -113,7 +114,7 @@
 
 %% configurando o cabeçalho ----------------------------------------------------
 \pagestyle{fancy}
-\fancyhead[L]{\logoUFRB}
+\fancyhead[L]{\logoEMAT}
 \fancyhead[C]{\meio}
 \fancyhead[R]{\logoUFRB}
 \fancyfoot[L, C, R]{}
